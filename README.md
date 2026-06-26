@@ -1,3 +1,5 @@
+https://carloseduardods.github.io/Landing-Page-Lista-Smart/
+
 # Lista Smart — Landing Page
 
 Landing page do app **Lista Smart** (comparador colaborativo de preços de supermercado).
