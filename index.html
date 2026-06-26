@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lista Smart — saiba onde está mais barato antes de sair de casa</title>
+<meta name="description" content="Lista Smart compara os preços dos supermercados da sua região com dados de uma comunidade. Monte sua lista, escaneie produtos e descubra onde sua compra fica mais barata." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#topo" class="brand" aria-label="Lista Smart - início">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="11" fill="#2E7D32"/>
+        <path d="M11 13h3.2l1.1 11.6a1.4 1.4 0 0 0 1.4 1.3h8.9a1.4 1.4 0 0 0 1.36-1.04l1.7-6.5H15.4" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="17.6" cy="29.4" r="1.7" fill="#fff"/><circle cx="25.6" cy="29.4" r="1.7" fill="#fff"/>
+        <path d="M23.5 14.4l3 3 3.4-4.4" stroke="#FF9E2C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Lista <b>Smart</b>
+    </a>
+    <div class="nav-links" id="navlinks">
+      <a href="#problema">O problema</a>
+      <a href="#como">Como funciona</a>
+      <a href="#voce">Para você</a>
+      <a href="#parceiros">Para mercados</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#parceiros" class="btn btn-ghost">Quero ser parceiro</a>
+      <a href="#baixar" class="btn btn-primary">Começar agora</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Comparador colaborativo de preços</span>
+      <h1>Saiba onde está <span class="hl">mais barato</span> antes de sair de casa.</h1>
+      <p class="lead">A Lista Smart reúne os preços dos supermercados da sua região, registrados por uma comunidade que economiza todo dia. Monte sua lista, escaneie os produtos e descubra qual mercado deixa sua compra mais em conta.</p>
+      <div class="hero-actions">
+        <a href="#baixar" class="btn btn-primary btn-lg">Começar agora</a>
+        <a href="#demo" class="btn btn-ghost btn-lg">Comparar preços</a>
+      </div>
+      <div class="trust">
+        <div class="avatars" aria-hidden="true">
+          <span style="background:#2E7D32">A</span>
+          <span style="background:#4CAF50">M</span>
+          <span style="background:#F57C00">J</span>
+          <span style="background:#1B5E20">R</span>
+        </div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <small>Uma rede de gente comum ajudando a baixar o preço da compra.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- signature: live price compare -->
+    <div class="compare" id="demo" aria-label="Demonstração de comparação de preços">
+      <div class="compare-head">
+        <div class="ph"><small>Comparando agora</small><span id="cmpName">Café torrado 500g</span></div>
+        <span class="live"><i></i>AO VIVO</span>
+      </div>
+      <div class="chips" id="chips" role="tablist" aria-label="Escolha um produto"></div>
+      <div class="rows" id="rows"></div>
+      <div class="save">
+        <span class="lbl">Comprando no mais barato, você economiza</span>
+        <span class="val" id="saveVal">R$ 0,00</span>
+      </div>
+      <div class="sharecode">
+        <span>Dividir esta lista com a família:</span> <b id="shareCode">B0ULDD</b>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section>
+  <div class="problem" id="problema">
+    <div class="wrap problem-grid">
+      <div>
+        <span class="eyebrow">O problema</span>
+        <h2>Comprar no mercado errado <em>pode sair caro</em>.</h2>
+        <p>O mesmo produto, na mesma rua, pode custar bem mais num mercado do que no outro. Sem comparar, a conta do mês inteiro fica maior — e ninguém percebe. A Lista Smart mostra a diferença antes de você gastar.</p>
+        <p style="margin-top:14px">Multiplique essa diferença por dezenas de itens, toda semana, o ano inteiro. É aí que mora o seu dinheiro.</p>
+      </div>
+      <div class="spread" aria-label="Exemplo de variação de preço entre mercados">
+        <div class="product">Mesmo item · 4 mercados próximos</div>
+        <div class="bar cheap"><span class="nm">Atacão Real</span><div class="track"><div class="fill" data-w="62%"></div></div><span class="pr">R$ 15,49</span></div>
+        <div class="bar mid"><span class="nm">Boa Compra</span><div class="track"><div class="fill" data-w="70%"></div></div><span class="pr">R$ 16,90</span></div>
+        <div class="bar mid"><span class="nm">Super Econ.</span><div class="track"><div class="fill" data-w="84%"></div></div><span class="pr">R$ 18,90</span></div>
+        <div class="bar exp"><span class="nm">Preço Bom</span><div class="track"><div class="fill" data-w="92%"></div></div><span class="pr">R$ 19,20</span></div>
+        <div class="gap"><b>R$ 3,71</b><span>de diferença no mesmo produto — só de escolher o mercado certo.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="como">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Da lista ao menor preço, em quatro passos.</h2>
+      <p>Simples no celular, funciona até offline. Você monta, compara e economiza.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num"></div><div class="ic">📝</div>
+        <h3>Monte sua lista</h3>
+        <p>Crie listas como "Mercado da semana" e adicione produtos com nome e quantidade. Tudo salvo no celular, mesmo sem internet.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num"></div><div class="ic">📷</div>
+        <h3>Escaneie ou registre</h3>
+        <p>Leia o código de barras pela câmera ou o QR Code do cupom fiscal. Achou um preço? Registre e ajude a comunidade.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num"></div><div class="ic">⚖️</div>
+        <h3>Compare os mercados</h3>
+        <p>Veja os preços do mais barato ao mais caro, com o mercado de cada valor. A Lista Smart aponta onde a compra fica menor.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num"></div><div class="ic">💸</div>
+        <h3>Economize de verdade</h3>
+        <p>Saia de casa sabendo onde comprar. Receba avisos de queda de preço e suba no ranking a cada contribuição.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR CONSUMERS -->
+<section class="sec" id="voce" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Para você, consumidor</span>
+      <h2>Tudo o que você precisa para gastar menos.</h2>
+      <p>As ferramentas do dia a dia de quem não quer pagar a mais por nada.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <div class="fic">⚖️</div>
+        <h3>Comparação de preços</h3>
+        <p>Busque um produto e veja os valores registrados pela comunidade, do mais barato ao mais caro, com o mercado de cada preço.</p>
+        <span class="pill">Ordenado por menor preço</span>
+      </div>
+      <div class="feat reveal">
+        <div class="fic">👨‍👩‍👧</div>
+        <h3>Listas compartilhadas</h3>
+        <p>Cada lista ganha um código de 6 caracteres. Mande para o casal ou a família e todo mundo vê e edita a mesma lista em tempo real.</p>
+        <span class="pill">Código: B0ULDD</span>
+      </div>
+      <div class="feat reveal">
+        <div class="fic">📷</div>
+        <h3>Scanner de código de barras</h3>
+        <p>Aponte a câmera para o produto na prateleira e veja na hora se o preço ali está bom comparado aos outros mercados.</p>
+        <span class="pill">Câmera em tempo real</span>
+      </div>
+      <div class="feat amber reveal">
+        <div class="fic">🧾</div>
+        <h3>Cupom fiscal (NFC-e)</h3>
+        <p>Escaneie o QR Code do cupom e registre todos os preços da compra de uma vez. Rápido para você, ótimo para a comunidade.</p>
+        <span class="pill">Vários preços de uma vez</span>
+      </div>
+      <div class="feat amber reveal">
+        <div class="fic">🔔</div>
+        <h3>Avisos de queda de preço</h3>
+        <p>Favoritou um produto? A Lista Smart te avisa quando ele ficar mais barato em algum mercado perto de você.</p>
+        <span class="pill">Notificações push</span>
+      </div>
+      <div class="feat reveal">
+        <div class="fic">🏆</div>
+        <h3>Ranking e pontos</h3>
+        <p>A cada preço que você contribui, ganha pontos e sobe no ranking com medalhas 🥇🥈🥉. Economizar vira jogo — e todos ganham.</p>
+        <span class="pill">+10 pontos por preço</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR PARTNERS -->
+<section class="sec partners" id="parceiros">
+  <div class="wrap partner-grid">
+    <div>
+      <span class="eyebrow">Para supermercados parceiros</span>
+      <h2 class="sec-head" style="margin:16px 0 0; font-size:clamp(28px,3.4vw,44px)">Saiba como seu mercado se compara — e atraia mais clientes.</h2>
+      <p style="color:var(--ink-2); font-size:17px; margin-top:16px; max-width:32em">A Lista Smart mostra onde você está competitivo e onde está perdendo cliente para o vizinho. Use os dados para precificar melhor e criar promoções certeiras.</p>
+      <div class="partner-list">
+        <div class="pl-item"><div class="pc">📊</div><div><h4>Painel de competitividade</h4><p>Veja quais produtos seu mercado está mais barato ou mais caro que os concorrentes da região.</p></div></div>
+        <div class="pl-item"><div class="pc">🔎</div><div><h4>Produtos mais buscados</h4><p>Descubra o que os consumidores procuram perto de você e quantas vezes seu mercado apareceu nas comparações.</p></div></div>
+        <div class="pl-item"><div class="pc">🏷️</div><div><h4>Promoções geolocalizadas</h4><p>Cadastre ofertas que aparecem para usuários próximos no momento certo da decisão de compra.</p></div></div>
+        <div class="pl-item"><div class="pc">📄</div><div><h4>Relatórios de oportunidade</h4><p>Sugestões de itens para colocar em promoção e exportação de relatórios em PDF ou CSV.</p></div></div>
+      </div>
+      <a href="#contato" class="btn btn-amber btn-lg" style="margin-top:30px">Quero ser parceiro</a>
+    </div>
+
+    <!-- mock dashboard -->
+    <div class="dash" aria-label="Exemplo de painel para supermercados">
+      <div class="dash-top"><span class="t">Painel do mercado</span><span class="badge">competitividade</span></div>
+      <div class="kpis">
+        <div class="kpi"><div class="v">1.284</div><div class="l">Buscas no mês</div></div>
+        <div class="kpi"><div class="v">68%</div><div class="l">Itens competitivos</div></div>
+        <div class="kpi amber"><div class="v">23</div><div class="l">A revisar</div></div>
+      </div>
+      <div class="dchart" aria-hidden="true">
+        <div class="col" style="height:54%"></div>
+        <div class="col" style="height:72%"></div>
+        <div class="col" style="height:61%"></div>
+        <div class="col" style="height:88%"></div>
+        <div class="col" style="height:66%"></div>
+        <div class="col" style="height:79%"></div>
+      </div>
+      <p class="dlabel">Aparições nas comparações · últimos 6 meses</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS / TESTIMONIALS -->
+<section class="sec" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Quem usa, economiza</span>
+      <h2>Benefícios que aparecem já na primeira compra.</h2>
+    </div>
+    <div class="cards">
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Antes eu ia no mercado de sempre. Comparei a lista do mês e fui em outro a duas quadras — desci uns R$ 40 na mesma compra."</p>
+        <div class="who"><div class="av" style="background:#2E7D32">A</div><div><b>Ana, mãe de dois</b><span>economiza na compra do mês</span></div></div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"A lista compartilhada salvou minha casa. Mando o código pra minha esposa e a gente vai marcando os itens em tempo real."</p>
+        <div class="who"><div class="av" style="background:#F57C00">J</div><div><b>João, casado</b><span>usa lista com a família</span></div></div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Escaneio o cupom fiscal quando chego em casa e já contribuo com vários preços. Cheguei no top 3 do ranking da minha cidade."</p>
+        <div class="who"><div class="av" style="background:#1B5E20">R</div><div><b>Rafa, colaborador</b><span>top do ranking 🥇</span></div></div>
+      </div>
+    </div>
+    <p class="note">Depoimentos ilustrativos do uso do app.</p>
+  </div>
+</section>
+
+<!-- CONTACT (partners) -->
+<section id="contato" style="padding:96px 0">
+  <div class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Mercados interessados</span>
+        <h2>Coloque seu supermercado na Lista Smart.</h2>
+        <p>Conte um pouco sobre o seu mercado e a gente entra em contato para mostrar como aparecer nas comparações e atrair quem está decidindo onde comprar.</p>
+        <div class="clist">
+          <div><span class="ck">✓</span> Apareça para consumidores da sua região</div>
+          <div><span class="ck">✓</span> Acesso ao painel de competitividade</div>
+          <div><span class="ck">✓</span> Cadastro de promoções geolocalizadas</div>
+          <div><span class="ck">✓</span> Sem compromisso para começar a conversa</div>
+        </div>
+      </div>
+
+      <div class="form">
+        <h3>Quero ser parceiro</h3>
+        <p class="sub">Resposta em até 1 dia útil.</p>
+        <div id="partnerForm">
+          <div class="field"><label for="mkt">Nome do supermercado</label><input id="mkt" type="text" placeholder="Ex.: Atacão Real" required></div>
+          <div class="frow">
+            <div class="field"><label for="resp">Responsável</label><input id="resp" type="text" placeholder="Seu nome" required></div>
+            <div class="field"><label for="cidade">Cidade</label><input id="cidade" type="text" placeholder="Cidade / UF" required></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="email">E-mail</label><input id="email" type="email" placeholder="contato@mercado.com" required></div>
+            <div class="field"><label for="fone">Telefone / WhatsApp</label><input id="fone" type="tel" placeholder="(00) 00000-0000"></div>
+          </div>
+          <div class="field"><label for="lojas">Quantas lojas?</label>
+            <select id="lojas"><option>1 loja</option><option>2 a 5 lojas</option><option>6 a 20 lojas</option><option>Mais de 20 lojas</option></select>
+          </div>
+          <div class="field"><label for="msg">Mensagem (opcional)</label><textarea id="msg" placeholder="Conte o que você espera da parceria"></textarea></div>
+          <button type="button" class="btn btn-amber" id="sendBtn">Enviar contato</button>
+          <div class="form-msg" id="formMsg">✓ Recebemos seu contato! Em breve a equipe da Lista Smart fala com você.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="finalcta" id="baixar">
+  <div class="wrap" style="padding:0">
+    <span class="eyebrow" style="justify-content:center">Comece hoje</span>
+    <h2>Sua próxima compra pode custar menos.</h2>
+    <p>Baixe a Lista Smart, monte sua lista e descubra onde economizar perto de você.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn btn-primary btn-lg">Começar agora</a>
+      <a href="#demo" class="btn btn-ghost btn-lg">Comparar preços</a>
+    </div>
+    <p style="font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:var(--ink-3); margin-top:22px">App Android · Funciona offline · Instalação via APK</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="36" height="36" rx="11" fill="#4CAF50"/>
+            <path d="M11 13h3.2l1.1 11.6a1.4 1.4 0 0 0 1.4 1.3h8.9a1.4 1.4 0 0 0 1.36-1.04l1.7-6.5H15.4" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="17.6" cy="29.4" r="1.7" fill="#fff"/><circle cx="25.6" cy="29.4" r="1.7" fill="#fff"/>
+            <path d="M23.5 14.4l3 3 3.4-4.4" stroke="#FF9E2C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Lista <b>Smart</b>
+        </span>
+        <p>O comparador colaborativo de preços de supermercado. Saiba onde está mais barato antes de sair de casa.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="fcol"><h5>Produto</h5><a href="#como">Como funciona</a><a href="#voce">Para você</a><a href="#demo">Comparar preços</a><a href="#baixar">Começar agora</a></div>
+        <div class="fcol"><h5>Mercados</h5><a href="#parceiros">Para parceiros</a><a href="#contato">Quero ser parceiro</a><a href="#parceiros">Painel</a></div>
+        <div class="fcol"><h5>Comunidade</h5><a href="#voce">Ranking</a><a href="#voce">Contribuir preços</a><a href="#depoimentos">Depoimentos</a></div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2025 Lista Smart. Todos os direitos reservados.</span>
+      <span class="mono">feito para quem economiza de verdade</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
